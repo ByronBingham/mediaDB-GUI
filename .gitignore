@@ -128,3 +128,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+*.keystore
+tomcat/logs/
+tomcat/work/
+tomcat/webapps/
