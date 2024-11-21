@@ -1,7 +1,7 @@
 // This pipeline requires the docker pipeline plugin and the use of
 // a jenkins/jnlp-agent-docker agent. This agent must be run as user/group "jenkins:docker" (may need to use group ID instead of group name)
 pipeline {
-    agent { label 'docker' }
+    agent { label 'node' }
 
     stages {
         stage('Build'){
