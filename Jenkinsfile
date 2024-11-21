@@ -20,15 +20,19 @@ pipeline {
         stage('Docker Build'){
             agent { label 'docker' }
 
-            unstash 'dist'
+            steps {
+                unstash 'dist'
 
-            script {
-                def props = readProperties file: 'version'  // readProperties requires pipeline utility steps plugin
-                version = props.version
+                script {
+                    def props = readProperties file: 'version'  // readProperties requires pipeline utility steps plugin
+                    version = props.version
+                }
+
+                sh "docker build -t ${LOCAL_REG_URL}/bmedia_api:${version}_SNAPSHOT --build-arg ARG_VERSION=${version} ."
+                sh "docker push ${LOCAL_REG_URL}/bmedia_api:${version}_SNAPSHOT"
             }
 
-            sh "docker build -t ${LOCAL_REG_URL}/bmedia_api:${version}_SNAPSHOT --build-arg ARG_VERSION=${version} ."
-            sh "docker push ${LOCAL_REG_URL}/bmedia_api:${version}_SNAPSHOT"
+            
         }
         stage('Test'){
             steps {
