@@ -28,8 +28,8 @@ pipeline {
                     version = props.version
                 }
 
-                sh "docker build -t ${LOCAL_REG_URL}/bmedia_api:${version}_SNAPSHOT --build-arg ARG_VERSION=${version} ."
-                sh "docker push ${LOCAL_REG_URL}/bmedia_api:${version}_SNAPSHOT"
+                sh "docker build -t ${LOCAL_REG_URL}/bmedia_gui:${version}_SNAPSHOT --build-arg ARG_VERSION=${version} ."
+                sh "docker push ${LOCAL_REG_URL}/bmedia_gui:${version}_SNAPSHOT"
             }            
         }
         stage('Test'){
