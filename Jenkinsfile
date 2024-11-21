@@ -13,7 +13,7 @@ pipeline {
                 sh "npm install"
                 sh "npx webpack --config ./webpack.config.js"
 
-                stash includes: './dist/**/*', name: 'dist'
+                stash includes: 'dist/**', name: 'dist', allowEmpty: false
             }            
         }
 
