@@ -1,0 +1,135 @@
+:root {
+    --accent-color-primary: rgb(0, 197, 0);
+    --background-color-primary: rgb(38, 38, 38);
+    --top-bar-height: 60px;
+    --results-bar-height: 60px;
+    --page-selector-height: 60px;
+  }
+
+body {
+    margin: 0; 
+    background-color: var(--background-color-primary);
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.image_flex {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: calc(100vh - var(--top-bar-height) - var(--results-bar-height) - var(--page-selector-height));
+}
+
+.image_flex_item {
+    padding: 5px;
+}
+
+.top-bar {
+    background-color: var(--accent-color-primary);
+    height: var(--top-bar-height);
+    position: sticky;
+    width: 100vw;
+}
+
+.image-container {
+    width: 100vw;
+    height: calc(100vh - var(--top-bar-height));
+    display: flex;
+    overflow: hidden;
+}
+
+.tags-sidebar {
+    height: 100%;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.tag {
+    color: var(--accent-color-primary);
+}
+
+.image-viewer {
+    height: 100%;
+    width: 100%;
+}
+
+.page-selector {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: var(--page-selector-height);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--background-color-primary);
+    align-content: center;
+}
+
+.page-number {
+    display: flex;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    align-self: center;
+    color: var(--accent-color-primary);
+    font-size: larger;
+}
+
+.page-number:link {
+    color: var(--accent-color-primary);
+}
+
+.page-number:visited {
+    color: var(--accent-color-primary);
+}
+
+.tag-edit {
+    background-color: var(--accent-color-primary);
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.results-div{
+    position: fixed;
+    top: var(--top-bar-height);
+}
+
+.result-image-checkbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    scale: 2;
+}
+
+.results-bar-group {
+    background-color: var(--background-color-primary);
+    margin: 4px;
+    padding: 5px
+}
+
+.results-edit-toggle {
+    background-color: var(--accent-color-primary);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    height: var(--results-bar-height);
+    text-align: center;
+    width: 100vw;
+    position: sticky;
+}
+
+.no-underline-link {
+    text-decoration: none;
+}
