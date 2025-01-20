@@ -299,7 +299,8 @@ export class TagInput extends LitElement {
      * @returns 
      */
     doCallback(event){
-        let lastTags = this.shadowRoot.getElementById("tags-search").value.split(' ');
+        let lowerString = this.shadowRoot.getElementById("tags-search").value.toLowerCase();
+        let lastTags = lowerString.split(' ');
         lastTags = lastTags.concat(this.submittedTags);
         let filteredTags = [];
         let tagMap = new Map();
@@ -367,7 +368,7 @@ export class TagInput extends LitElement {
                     <link rel="stylesheet" href="template.css">
                     <form class="results-bar-group" @submit="${this.doCallback}">
                         <label id="tag-input-label" for="tags-search" style="color: var(--accent-color-primary)">${this.submittedTags.join(" ")}</label>
-                        <input id="tags-search" name="tags" type="text" placeholder="Ex: blue_sky cloud 1girl" value="${this.searchString}" list="tagsList" autocomplete="off"
+                        <input id="tags-search" name="tags" type="text" placeholder="Ex: blue_sky cloud 1girl" autocapitalize="none" value="${this.searchString}" list="tagsList" autocomplete="off"
                         @keyup="${this.updateTagInput}" @change="${this.updateTagInput}">                        
                         <datalist id="tagsList">
                             ${options}

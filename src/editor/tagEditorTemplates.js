@@ -84,7 +84,7 @@ export class TagConrolBar extends LitElement {
      * @returns 
      */
     submitAddTagForm(event){
-        let tagName = this.shadowRoot.getElementById("tag-name-txt").value;
+        let tagName = this.shadowRoot.getElementById("tag-name-txt").value.toLowerCase();
         let nsfw = this.shadowRoot.getElementById("nsfw-check").checked;
         fetch(`${api_addr}/tags/add_tag?tag_name=${tagName}&nsfw=${nsfw}`);
 

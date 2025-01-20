@@ -155,7 +155,6 @@ export class ImageTagList extends LitElement {
      */
     toggleEditor(){
         if(this.editing){
-            this.tagControlBar.closeAddTagForm();
             this.editing = false;
         } else {
             this.editing = true;
