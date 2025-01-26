@@ -2,8 +2,16 @@
   "name": "bboru",
   "version": "0.0.1",
   "private": true,
+  "main": "src/server.ts",
+  "scripts": {
+    "develop": "npm run copy_files && tsc -w",
+    "start": "npm run copy_files && node dist/server.js",
+    "copy_files": "cp src/index.html dist/index.html"
+  },
   "dependencies": {
-    "lit-element": "^3.2.2"
+    "@types/express": "^5.0.0",
+    "express": "^4.21.2",
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",

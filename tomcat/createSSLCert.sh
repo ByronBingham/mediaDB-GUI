@@ -1,1 +1,0 @@
-"$JAVA_HOME/bin/keytool" -genkey -alias tomcat -keyalg RSA -keystore ./conf/.keystore
