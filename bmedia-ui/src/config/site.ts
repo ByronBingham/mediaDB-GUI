@@ -19,6 +19,10 @@ export const siteConfig = {
     {
       label: "Favorites",
       href: "/favorites",
+    },
+    {
+      label: "Account",
+      href: "/account",
     }
   ],
   navMenuItems: [
